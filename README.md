@@ -164,7 +164,7 @@ MCP is optional. A connector can expose an authorized source to the agent, but i
 
 Use these services to discover additional candidate journals. Publisher tools generally search their own portfolios; JANE and Web of Science use different scholarly collections. Combine suitable sources, then check each journal's official scope and recent publications independently.
 
-This directory was informed by [Northwestern University's Galter Library guide to Journal Selection Tools](https://libguides.galter.northwestern.edu/choosing-a-journal/journal-selection-tools), with provider documentation used to check the descriptions below. IEEE is an additional engineering-focused option. Links and documentation were reviewed on **November 17, 2026**; input fields, access requirements, metrics, and export features can change. Listing a service does not mean its interactive matching workflow has been tested or integrated into this skill.
+Provider documentation was used to check the descriptions below. Links and documentation were reviewed on **November 17, 2026**; input fields, access requirements, metrics, and export features can change. Listing a service does not mean its interactive matching workflow has been tested or integrated into this skill.
 
 | Tool | Coverage | What to enter | What it helps you inspect |
 | --- | --- | --- | --- |
@@ -228,31 +228,6 @@ tests/
 ```
 
 Only the `journal-suggester/` folder is needed for installation. Keep the README and tests in the public repository to explain usage and support maintenance.
-
-## Development and validation
-
-Run the offline helper tests from the repository root:
-
-```bash
-python3 -B -m unittest discover -s tests -v
-```
-
-The suite covers metadata handling, request construction, input validation, bounded retries, error handling, and TLS verification. [Behavioral scenarios](tests/skill-scenarios.md) support manual evaluation of the skill's decisions. These checks do not quantify recommendation accuracy or demonstrate compatibility with every agent or Python version.
-
-For contributions, use synthetic or already-public examples. Include the source and access date for proposed data-source changes. Keep manuscripts, personal details, credentials, downloaded PDFs, and generated retrieval runs out of commits.
-
-## Publishing this repository
-
-Include `README.md`, `.gitignore`, the entire `journal-suggester/` folder, and the two reusable test files. From the repository root, stage that explicit set:
-
-```bash
-git add README.md .gitignore journal-suggester/ tests/test_crossref.py tests/skill-scenarios.md
-git diff --cached --stat
-```
-
-Review the staged files before committing and pushing. Local PDFs, generated ZIP packages, and `tests/runs/` are excluded by `.gitignore`. A downloadable skill ZIP may be attached to a GitHub Release rather than committed alongside its source.
-
-Publishing this source repository does not automatically create a plugin-directory listing.
 
 ## License
 
