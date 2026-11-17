@@ -12,7 +12,7 @@ The skill checks **aims and scope first**. A high impact factor, low fee, or pub
 - Separates first editorial decision, post-review decision, acceptance, and online-publication timing.
 - Compares OA routes, listed APCs, other mandatory charges, and estimated author-payable costs.
 - Optionally checks university APC agreements against the institution, corresponding author, journal, article type, and agreement dates.
-- Uses available publisher-suggester results or user-provided exports as discovery leads, followed by independent verification.
+- Uses available publisher-suggester results or user-provided exports as discovery leads, followed by independent verification. See the [Journal Selection Tools directory](#journal-selection-tools) for provider links and inputs.
 
 Version 1 covers **journals**. Conference recommendations need a separate workflow.
 
@@ -159,6 +159,46 @@ Crossref metadata and abstract coverage vary. Search scores are not journal-fit 
 | Publisher journal finders | Additional candidate journals | Use available permitted browser access or imported results; no bundled matching adapters |
 
 MCP is optional. A connector can expose an authorized source to the agent, but it does not supply subscriptions, bypass access controls, or make provider match scores interchangeable. Publisher/API capabilities should be checked when integrating them.
+
+## Journal Selection Tools
+
+Use these services to discover additional candidate journals. Publisher tools generally search their own portfolios; JANE and Web of Science use different scholarly collections. Combine suitable sources, then check each journal's official scope and recent publications independently.
+
+This directory was informed by [Northwestern University's Galter Library guide to Journal Selection Tools](https://libguides.galter.northwestern.edu/choosing-a-journal/journal-selection-tools), with provider documentation used to check the descriptions below. IEEE is an additional engineering-focused option. Links and documentation were reviewed on **November 17, 2026**; input fields, access requirements, metrics, and export features can change. Listing a service does not mean its interactive matching workflow has been tested or integrated into this skill.
+
+| Tool | Coverage | What to enter | What it helps you inspect |
+| --- | --- | --- | --- |
+| [JANE: Journal/Author Name Estimator](https://jane.biosemantics.org/) | PubMed literature; useful for biomedical and life-science topics | Title, abstract, or topical keywords | Similarity-ranked journals and related articles; the [FAQ](https://jane.biosemantics.org/faq.php) describes its confidence scores, MEDLINE/DOAJ labels, and API. |
+| [Web of Science Manuscript Matcher](https://mjl.clarivate.com/home?mm=) | Web of Science Core Collection | Manuscript title and abstract | Journal matches across publishers. Access may require sign-in; matching access and licensed JCR/API access are separate. |
+| [Wiley Journal Finder](https://www.wiley.com/en-us/journal-finder) | Wiley journal portfolio | Title and abstract for matching, or subjects/topics for browsing | Relevant journals, metrics, publishing policies, and editorial timing; see [Wiley's comparison guide](https://www.wiley.com/publishing/article/authors/author-resources/how-to-choose-a-journal-for-publication). |
+| [Elsevier JournalFinder](https://journalfinder.elsevier.com/) | Elsevier journal portfolio | Abstract, or keywords and other manuscript details | Candidate journals and available impact, publishing-time, and OA information. Confirm every selected journal's current policies and fees. |
+| [Springer Nature Journal Finder](https://link.springer.com/journals) | Springer Nature portfolio, including Springer, Nature Portfolio, and BMC titles | Title, abstract, or keywords | Matching journals and available metrics, including median first-decision time. [Provider documentation](https://support.springernature.com/en/support/solutions/articles/6000134500-find-the-right-journal-for-your-manuscript) describes shareable results and CSV export. |
+| [Taylor & Francis Journal Suggester](https://authorservices.taylorandfrancis.com/publishing-your-research/choosing-a-journal/journal-suggester/) | Taylor & Francis journal portfolio | Abstract or relevant keywords | Journal descriptions and available citation and publication-speed metrics. |
+| [Sage Journal Recommender](https://journal-recommender.sagepub.com/) | Sage journal portfolio | Title and keywords | Matches with subject, indexing, and journal-type filters; see the [provider FAQ](https://journals.sagepub.com/page/journal-recommender-faqs). Sage Path is a separate transfer/submission service. |
+| [IEEE Publication Recommender](https://publication-recommender.ieee.org/home) | IEEE publications; use journal/periodical results for this skill | Keywords; the service also offers article-file input | Publication scope, bibliometric information, OA availability, and publishing-time information; see [IEEE's guide](https://open.ieee.org/how-to-choose-the-right-publication-for-your-submission/). Conference results remain outside this skill's journal workflow. |
+
+### Use these tools with the skill
+
+1. Choose services appropriate to your field. Review the service's privacy information before sharing unpublished text or uploading a file.
+2. Run the service yourself, or explicitly authorize the agent to use a named service if permitted browser access is available. Some interfaces require JavaScript or an authenticated session.
+3. Supply a result export, shareable link, or copied journal list. Include the provider and run date, plus original scores if available. Export support varies; CSV is explicitly documented for Springer Nature.
+4. Ask the skill to merge candidates, remove duplicates, and independently compare scope, methods, related papers, metrics, speed, and payable costs.
+
+Example using results you have already obtained:
+
+```text
+Use $journal-suggester to compare the journals in my attached Springer
+Nature CSV and copied Wiley results for the manuscript below.
+
+Keep the original provider scores separate. Check official scope and
+recent related publications, and report uncertain fees or timing clearly.
+
+Article type: Original research
+Abstract: [your abstract]
+Results generated: [date, or unknown]
+```
+
+No automated adapters for these matching services are bundled in version 1. The skill uses available permitted access or supplied results. It does not submit manuscripts, initiate transfer services, or send your abstract to every provider automatically. Match scores are not acceptance probabilities, and first-decision figures do not necessarily measure external peer-review time.
 
 ## Privacy and manuscript handling
 
