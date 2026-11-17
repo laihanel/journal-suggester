@@ -1,0 +1,20 @@
+# Local manuscript/reference documents in this working directory
+/*.pdf
+
+# Generated retrieval evidence and release packages
+/tests/runs/
+/*.zip
+
+# Python and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# OS metadata
+.DS_Store
+Thumbs.db

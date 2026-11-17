@@ -1,0 +1,4 @@
+interface:
+  display_name: "Journal Suggester"
+  short_description: "Find journals by scope, speed, impact, and net cost"
+  default_prompt: "Use $journal-suggester to find journals for my manuscript, prioritizing scope fit and comparing speed, impact, open access, and cost."
